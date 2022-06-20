@@ -4,7 +4,7 @@ export const fetchAsyncMovies = createAsyncThunk(
   "movies/fetchAsyncMovies",
   async () => {
     const res = await fetch(
-      "http://www.omdbapi.com/?apikey=5f13299c&s=Harry&type=movie"
+      "http://www.omdbapi.com/?apikey=5f13299c&s=avengers&type=movie"
     );
     const data = await res.json();
     
@@ -17,7 +17,7 @@ export const fetchAsyncShows = createAsyncThunk(
   "movies/fetchAsyncShows",
   async () => {
     const res = await fetch(
-      "http://www.omdbapi.com/?apikey=5f13299c&s=Friends&type=series"
+      "http://www.omdbapi.com/?apikey=5f13299c&s=lost&type=series"
     );
     const data = await res.json();
     
