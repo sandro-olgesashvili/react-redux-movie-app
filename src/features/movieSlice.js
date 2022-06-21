@@ -2,9 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchAsyncMovies = createAsyncThunk(
   "movies/fetchAsyncMovies",
-  async () => {
+  async (term = 'avengers') => {
     const res = await fetch(
-      "http://www.omdbapi.com/?apikey=5f13299c&s=avengers&type=movie"
+      `http://www.omdbapi.com/?apikey=5f13299c&s=${term}&type=movie`
     );
     const data = await res.json();
     
@@ -15,9 +15,9 @@ export const fetchAsyncMovies = createAsyncThunk(
 
 export const fetchAsyncShows = createAsyncThunk(
   "movies/fetchAsyncShows",
-  async () => {
+  async (term = 'lost') => {
     const res = await fetch(
-      "http://www.omdbapi.com/?apikey=5f13299c&s=lost&type=series"
+      `http://www.omdbapi.com/?apikey=5f13299c&s=${term}&type=series`
     );
     const data = await res.json();
     
